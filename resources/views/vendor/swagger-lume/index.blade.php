@@ -27,6 +27,15 @@
             background: #fafafa;
         }
     </style>
+    <script>
+        if (location.protocol === 'https:') {
+          document.querySelectorAll('input[type="text"]').forEach(el => {
+            if (el.value.startsWith('http://')) {
+              el.value = el.value.replace('http://', 'https://');
+            }
+          });
+        }
+    </script>
 </head>
 
 <body>
@@ -75,7 +84,7 @@
         const ui = SwaggerUIBundle({
             dom_id: '#swagger-ui',
 
-            url: "{!! $urlToDocs !!}",
+            url: "{!! preg_replace('/^http:/', 'https:', $urlToDocs) !!}",
             operationsSorter: {!! isset($operationsSorter) ? '"' . $operationsSorter . '"' : 'null' !!},
             configUrl: {!! isset($additionalConfigUrl) ? '"' . $additionalConfigUrl . '"' : 'null' !!},
             validatorUrl: {!! isset($validatorUrl) ? '"' . $validatorUrl . '"' : 'null' !!},

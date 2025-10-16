@@ -1,26 +1,25 @@
-# Lumen PHP Framework
-
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
-
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
-
-> **Note:** In the years since releasing Lumen, PHP has made a variety of wonderful performance improvements. For this reason, along with the availability of [Laravel Octane](https://laravel.com/docs/octane), we no longer recommend that you begin new projects with Lumen. Instead, we recommend always beginning new projects with [Laravel](https://laravel.com).
+# Todos API Task
 
 ## Official Documentation
 
 Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
 
-## Contributing
+## Jawaban pertanyaan
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### 1. REST API
+Adalah cara komunikasi antar system yang disebut juga service dengan cara yang terstruktur dan menggunakan aturan dan method HTTP yang ada
 
-## Security Vulnerabilities
+#### 2. CORS dan cara menangani di backend
+CORS adalah keamanan browser yang membatasi akses website ke domain lain, di case saya pada API Lumen ini, saya menggunakan swagger ketika saya deploy ke public domain swager saya tidak muncul karena terkena cors Mix content, jadi saya atur config di .env agar APP_URL mengarah ke domain public saya. begitu juga dengan env SWAGGER_LUME_CONST_HOST, dan saya atur untuk SWAGGER_LUME_FORCE_HTTPS bernilai true agar selalu request https. namun CORS juga bisa dimanfaatkan sebagai security tambahan misal untuk membatasi akses dari domain tertentu dan method tertentu.
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+#### 3. Perbedaan SQL dan NoSQL
+- SQL model data terstruktur dalam table, sedangkan NoSQL lebih variatif ke dokumen file seperti json
+- SQL lebih strict karena harus didefinisikan dulu atau gampangnya table harus mendefinisikan kolomnya dulu baru bisa insert data, sedangkan NoSQL tidak perlu seperti itu, cukup define dokumen dan strukturnya dinamis tanpa harus di define terlebih dahulu.
+- SQL adalah relational yang mana memudahkan adanya relasi antar table dengan stablil, NoSQL Non-relational tidak mendukung adanya relasi antar dokumen secara default namun masih bisa diatasi dengan ORM jika diperlukan adanya relasi dokumen.
 
-## License
+#### 4. Middleware
+Middleware ibarat satpam di suatu gedung, dia akan melakukan pengecekan yang diperlukan kepada pengunjung sebelum pengunjung tersebut masuk gedung. atau seperti petugas ticketing disuatu konser yang melakukan validasi atau pengecekan terhadap user yang ingin masuk ke venue untuk menonton konser.
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### 5. CRUD
+
+Untuk dokumentasi CRUD bisa dilihat pada https://todos.api.imonix.my.id/api/documentation

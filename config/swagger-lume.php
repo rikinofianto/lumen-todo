@@ -219,8 +219,9 @@ return [
     | Add constants which can be used in anotations
     |--------------------------------------------------------------------------
      */
+    'schemes' => ['https'],
     'constants' => [
-        'SWAGGER_LUME_CONST_HOST' => env('SWAGGER_LUME_CONST_HOST', 'https://todos.api.imonix.my.id'),
+        'SWAGGER_LUME_CONST_HOST' => env('SWAGGER_LUME_CONST_HOST', null),
     ],
 
     /*
